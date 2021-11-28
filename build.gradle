@@ -1,0 +1,40 @@
+plugins {
+    id 'java-library'
+}
+
+group 'com.github.saturn220.dispatcher'
+version '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(8))
+    }
+}
+
+tasks.named('jar') {
+    manifest {
+        attributes('Implementation-Title': project.name,
+            'Implementation-Version': project.version)
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // https://mvnrepository.com/artifact/org.reflections/reflections
+    implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'
+}
+
+test {
+    useJUnitPlatform()
+}
