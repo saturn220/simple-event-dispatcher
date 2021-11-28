@@ -3,22 +3,19 @@ plugins {
 }
 
 group 'com.github.saturn220.dispatcher'
-version '0.0.1-SNAPSHOT'
+version '1.0.0'
 
 repositories {
     mavenCentral()
 }
 
-java {
-    withSourcesJar()
-    withJavadocJar()
-}
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
-    }
-}
+//java {
+//    withSourcesJar()
+//    withJavadocJar()
+//    toolchain {
+//        languageVersion.set(JavaLanguageVersion.of(8))
+//    }
+//}
 
 tasks.named('jar') {
     manifest {

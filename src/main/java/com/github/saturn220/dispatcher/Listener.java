@@ -5,5 +5,6 @@ package com.github.saturn220.dispatcher;
  * @since 06.05.2020
  */
 public interface Listener {
+
     void handle(EventData eventData);
 }
