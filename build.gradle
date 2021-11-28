@@ -9,21 +9,6 @@ repositories {
     mavenCentral()
 }
 
-//java {
-//    withSourcesJar()
-//    withJavadocJar()
-//    toolchain {
-//        languageVersion.set(JavaLanguageVersion.of(8))
-//    }
-//}
-
-tasks.named('jar') {
-    manifest {
-        attributes('Implementation-Title': project.name,
-            'Implementation-Version': project.version)
-    }
-}
-
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
