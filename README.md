@@ -5,16 +5,16 @@ modules(components) to communicate with each other by dispatching events and lis
 them.
 
 ## Installation
-###Gradle example.
+### Gradle example.
 Add jitpack repository url.
-```json
+```
 repositories {
     ...
     maven { url "https://jitpack.io" }
 }
 ```
 Import the lib to your project dependencies
-```json
+```
 dependencies {
     ...
     implementation 'com.github.saturn220:simple-event-dispatcher:1.0.2'
