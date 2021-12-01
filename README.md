@@ -41,7 +41,7 @@ public class UserButtonClickedListener implements Listener {
 
 ### Scan your application
 Scans your application directories for the presence of 
-a `[Listener](src/main/java/com/github/saturn220/dispatcher/Listener.java)` interface 
+a [Listener](src/main/java/com/github/saturn220/dispatcher/Listener.java) interface 
 and adds it to the dispatcher.
 ```java
 Dispatcher dispatcher = new Dispatcher();
