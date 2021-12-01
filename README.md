@@ -1,5 +1,7 @@
 # Simple Event Dispatcher
 
+![github workflow](https://github.com/saturn220/simple-event-dispatcher/actions/workflows/gradle.yml/badge.svg)
+
 The SimpleEventDispatcher java library provides tools that allow your application
 modules(components) to communicate with each other by dispatching events and listening to
 them.
