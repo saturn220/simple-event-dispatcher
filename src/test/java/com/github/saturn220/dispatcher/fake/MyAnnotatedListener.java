@@ -4,7 +4,7 @@ import com.github.saturn220.dispatcher.EventData;
 import com.github.saturn220.dispatcher.EventListener;
 import com.github.saturn220.dispatcher.Listener;
 
-@EventListener("my-event")
+@EventListener("app.domain.entity.updated")
 public class MyAnnotatedListener implements Listener {
 
     public int value = 1;

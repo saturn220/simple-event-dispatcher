@@ -9,6 +9,11 @@ public class MyListener implements Listener {
 
     @Override
     public void handle(EventData eventData) {
+        if (eventData == null) {
+            value = 10;
+            return;
+        }
+
         MyDataObject myDataObject = eventData.get(MyDataObject.class);
         value = myDataObject.value;
     }

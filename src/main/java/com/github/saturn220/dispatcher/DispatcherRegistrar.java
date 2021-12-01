@@ -36,9 +36,7 @@ public class DispatcherRegistrar {
                 dispatcher.register(annotation.value(), listener);
 
                 System.out.println("Registered listener for event: " + annotation.value());
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
+            } catch (InstantiationException | IllegalAccessException e) {
                 e.printStackTrace();
             }
         }

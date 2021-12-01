@@ -1,6 +1,8 @@
 package com.github.saturn220.dispatcher;
 
 /**
+ * Container of event data transmitted to listeners.
+ *
  * @author Stanislav Aliferovich
  * @since 06.05.2020
  */
@@ -38,7 +40,7 @@ public class EventData {
 
     private <T> T cast(Class<T> clazz, Object value) {
         if (!clazz.isInstance(value)) {
-            System.err.println("Dispatcher - " + getClass().getSimpleName() + ". Cannot cast to: " + clazz);
+            System.err.println("Dispatcher. Cannot cast to: " + clazz);
             return null;
         }
 
