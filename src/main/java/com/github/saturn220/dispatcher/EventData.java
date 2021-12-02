@@ -1,12 +1,14 @@
 package com.github.saturn220.dispatcher;
 
+import java.io.Serializable;
+
 /**
  * Container of event data transmitted to listeners.
  *
  * @author Stanislav Aliferovich
  * @since 06.05.2020
  */
-public class EventData {
+public class EventData implements Serializable {
     Object value;
     Object value2;
     Object value3;
@@ -24,6 +26,21 @@ public class EventData {
         this.value = value1;
         this.value2 = value2;
         this.value3 = value3;
+    }
+
+    @SuppressWarnings("unchecked")
+    public <T> T get() {
+        return (T) value;
+    }
+
+    @SuppressWarnings("unchecked")
+    public <T> T get2() {
+        return (T) value2;
+    }
+
+    @SuppressWarnings("unchecked")
+    public <T> T get3() {
+        return (T) value3;
     }
 
     public <T> T get(Class<T> clazz) {

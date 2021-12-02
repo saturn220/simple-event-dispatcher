@@ -25,10 +25,7 @@ hs_err_pid*
 
 /build/
 
-/gradle/
 /.gradle/
-gradlew.bat
-gradlew
 
 
 /.idea/

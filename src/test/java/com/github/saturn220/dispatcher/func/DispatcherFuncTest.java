@@ -1,8 +1,12 @@
-package com.github.saturn220.dispatcher;
+package com.github.saturn220.dispatcher.func;
 
-import com.github.saturn220.dispatcher.fake.MyDataObject;
-import com.github.saturn220.dispatcher.fake.MyEvent;
-import com.github.saturn220.dispatcher.fake.MyListener;
+import com.github.saturn220.dispatcher.Dispatcher;
+import com.github.saturn220.dispatcher.DispatcherRegistrar;
+import com.github.saturn220.dispatcher.EventData;
+import com.github.saturn220.dispatcher.Listener;
+import com.github.saturn220.dispatcher.func.fake.MyDataObject;
+import com.github.saturn220.dispatcher.func.fake.MyEvent;
+import com.github.saturn220.dispatcher.func.fake.MyListener;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

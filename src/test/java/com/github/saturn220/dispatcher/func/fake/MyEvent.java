@@ -1,4 +1,4 @@
-package com.github.saturn220.dispatcher.fake;
+package com.github.saturn220.dispatcher.func.fake;
 
 import com.github.saturn220.dispatcher.Event;
 
