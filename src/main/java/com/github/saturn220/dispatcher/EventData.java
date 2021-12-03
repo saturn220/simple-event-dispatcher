@@ -9,9 +9,11 @@ import java.io.Serializable;
  * @since 06.05.2020
  */
 public class EventData implements Serializable {
-    Object value;
-    Object value2;
-    Object value3;
+    protected Object value;
+    protected Object value2;
+    protected Object value3;
+
+    protected EventData() {}
 
     public EventData(Object value) {
         this.value = value;
@@ -67,11 +69,11 @@ public class EventData implements Serializable {
     private String toStringIsNotNull(Object obj) {
         if (obj == null) return "";
 
-        return " : " + obj.toString();
+        return obj.toString();
     }
 
     @Override
     public String toString() {
-        return value.toString() + toStringIsNotNull(value2) + toStringIsNotNull(value3);
+        return toStringIsNotNull(value) + ":" + toStringIsNotNull(value2) + ":" + toStringIsNotNull(value3);
     }
 }

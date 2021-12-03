@@ -58,7 +58,7 @@ class EventDataTest {
 
     @Test
     void testToString() {
-        assertEquals("1 : 2 : 3", new EventData(1, 2, 3).toString());
+        assertEquals("1:2:3", new EventData(1, 2, 3).toString());
     }
 
     @Test
