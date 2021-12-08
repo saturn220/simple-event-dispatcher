@@ -67,13 +67,17 @@ public class EventData implements Serializable {
     }
 
     private String toStringIsNotNull(Object obj) {
+        return toStringIsNotNull(obj, "");
+    }
+
+    private String toStringIsNotNull(Object obj, String separator) {
         if (obj == null) return "";
 
-        return obj.toString();
+        return separator + obj;
     }
 
     @Override
     public String toString() {
-        return toStringIsNotNull(value) + ":" + toStringIsNotNull(value2) + ":" + toStringIsNotNull(value3);
+        return toStringIsNotNull(value) + toStringIsNotNull(value2, ":") + toStringIsNotNull(value3, ":");
     }
 }
