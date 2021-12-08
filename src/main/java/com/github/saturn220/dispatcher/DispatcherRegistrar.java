@@ -3,6 +3,7 @@ package com.github.saturn220.dispatcher;
 import org.reflections.Reflections;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Modifier;
 import java.util.Set;
 
 /**
@@ -17,15 +18,18 @@ public class DispatcherRegistrar {
         Set<Class<? extends Listener>> eventListeners = reflections.getSubTypesOf(Listener.class);
         for (Class<?> clazz : eventListeners) {
             Annotation annotation = clazz.getAnnotation(EventListener.class);
+            if (Modifier.isAbstract(clazz.getModifiers())) {
+                continue;
+            }
             if (annotation == null) {
-                System.err.println("EventHandler annotate not defined for event listener class: " + clazz);
+                dispatcher.logger.warn("EventHandler annotate not defined for event listener class: " + clazz);
             }
         }
 
         Set<Class<?>> annotated = reflections.getTypesAnnotatedWith(EventListener.class);
         for (Class<?> clazz : annotated) {
             if (!Listener.class.isAssignableFrom(clazz)) {
-                System.err.println("Class is not implemented interface Listener: " + clazz);
+                dispatcher.logger.warn("Class is not implemented interface Listener: " + clazz);
                 continue;
             }
 
@@ -35,9 +39,9 @@ public class DispatcherRegistrar {
                 Listener listener = (Listener) clazz.newInstance();
                 dispatcher.register(annotation.value(), listener);
 
-                System.out.println("Registered listener for event: " + annotation.value());
+                dispatcher.logger.info("Registered listener for event: " + annotation.value());
             } catch (InstantiationException | IllegalAccessException e) {
-                e.printStackTrace();
+                dispatcher.logger.error(e.getMessage());
             }
         }
     }

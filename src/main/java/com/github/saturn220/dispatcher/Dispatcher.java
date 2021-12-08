@@ -15,6 +15,8 @@ import java.util.Map;
  */
 public class Dispatcher {
 
+    public Logger logger = new SoutLogger();
+
     private final Map<String, List<Listener>> eventToListeners = new HashMap<>();
 
     /**
@@ -40,10 +42,10 @@ public class Dispatcher {
     }
 
     public void dispatch(String eventName, EventData eventData) {
-        System.out.println("Dispatcher. Raised event: " + eventName + ". Data: " + eventData);
+        logger.info("Raised event: " + eventName + ". Data: " + eventData);
 
         if (eventToListeners.get(eventName) == null) {
-            System.out.println("Dispatcher. No listeners. Event: " + eventName);
+            logger.warn("No listeners. Event: " + eventName);
             return;
         }
 
